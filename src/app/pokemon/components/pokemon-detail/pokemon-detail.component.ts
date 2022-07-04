@@ -26,7 +26,7 @@ export class PokemonDetailComponent implements OnInit {
     const pokemonId : number|null = Number(this.route.snapshot.paramMap.get('id'));
 
     if (pokemonId) {
-      this.pokemonSelected = this.pokemonService.getPokemonById(pokemonId);
+      this.pokemonService.getPokemonById(pokemonId).subscribe(pokemon => this.pokemonSelected = pokemon);
     }
   }
 

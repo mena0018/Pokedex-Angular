@@ -49,7 +49,7 @@ export class PokemonFormComponent implements OnInit {
   }
 
   onSubmit() {
-    window.alert("Changement pris en compte");
-    this.router.navigate(['/pokemon', this.pokemon.id]);
+    this.pokemonService.updatePokemon(this.pokemon)
+      .subscribe(() => this.router.navigate(['/pokemon', this.pokemon.id]))
   }
 }
