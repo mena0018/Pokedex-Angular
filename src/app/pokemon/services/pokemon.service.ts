@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Pokemon } from '../model/Pokemon';
-import { POKEMONS } from '../mock/mock-pokemon-list';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable, catchError, tap, of } from 'rxjs';
 
 
 @Injectable(
-  // Injecte dans toute l'application => les 3 méthodes seront disponible partout
+  // Injecte dans toute l'application
   // providedIn: 'root',
 
   // Pour injecter uniquement dans le module Pokémon
@@ -13,12 +14,23 @@ import { POKEMONS } from '../mock/mock-pokemon-list';
 
 
 export class PokemonService {
-  getPokemonsList(): Pokemon[] {
-    return POKEMONS;
+
+  constructor (private http: HttpClient){}
+
+  getPokemonsList(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>('api/pokemons').pipe(
+      tap (response => this.log(response)),
+
+      catchError(error => this.handleError(error, []))
+    )
   }
 
-  getPokemonById(id: number): Pokemon | undefined {
-    return POKEMONS.find((pokemon) => pokemon.id === id);
+  getPokemonById(id: number): Observable<Pokemon | undefined> {
+    return this.http.get<Pokemon>(`api/pokemons/${id}`).pipe(
+      tap (response => this.log(response)),
+
+      catchError(error => this.handleError(error, undefined))
+    )
   }
 
   getPokemonTypeList(): string[] {
@@ -35,5 +47,23 @@ export class PokemonService {
       'Psy',
       'Poison'
     ];
+  }
+
+  updatePokemon(pokemon: Pokemon): Observable<null> {
+    const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
+
+    return this.http.put('api/pokemons', pokemon, options).pipe(
+      tap(response => this.log(response)),
+      catchError(error => this.handleError(error, null))
+    )
+  }
+
+  private log (response: any) {
+    console.table(response)
+  }
+
+  private handleError (error: Error, errorValue: any) {
+    console.error(error);
+    return of(errorValue);
   }
 }
