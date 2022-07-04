@@ -19,16 +19,16 @@ export class PokemonService {
 
   getPokemonsList(): Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>('api/pokemons').pipe(
-      tap (response => this.log(response)),
 
+      tap (response => this.log(response)),
       catchError(error => this.handleError(error, []))
     )
   }
 
   getPokemonById(id: number): Observable<Pokemon | undefined> {
     return this.http.get<Pokemon>(`api/pokemons/${id}`).pipe(
-      tap (response => this.log(response)),
 
+      tap (response => this.log(response)),
       catchError(error => this.handleError(error, undefined))
     )
   }
@@ -53,6 +53,15 @@ export class PokemonService {
     const options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' })};
 
     return this.http.put('api/pokemons', pokemon, options).pipe(
+
+      tap(response => this.log(response)),
+      catchError(error => this.handleError(error, null))
+    )
+  }
+
+  deletePokemonById(id: number) : Observable<null> {
+    return this.http.delete(`api/pokemons/${id}`).pipe(
+
       tap(response => this.log(response)),
       catchError(error => this.handleError(error, null))
     )
