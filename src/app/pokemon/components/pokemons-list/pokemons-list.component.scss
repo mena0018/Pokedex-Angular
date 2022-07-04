@@ -37,3 +37,18 @@
     }
   }
 }
+
+.btn-add-pokemon {
+  position: fixed;
+  bottom: 25px; 
+  right: 25px;
+  background: #009688;
+  padding: 10px 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ececec;
+  font-size: 20px;
+  box-shadow: 0 0 10px 2px #333;
+}

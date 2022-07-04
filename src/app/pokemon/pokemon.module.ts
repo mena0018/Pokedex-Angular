@@ -13,13 +13,16 @@ import { PokemonService,
 import { PokemonsListComponent, 
          PokemonDetailComponent,
          PokemonFormComponent,
-         PokemonEditComponent
+         PokemonEditComponent,
+         PokemonAddComponent,
+         PokemonSearchComponent
 } from './components';
 
 
 
 const pokemonRoutes: Routes = [
   { path: "edit/pokemon/:id",component: PokemonEditComponent},
+  { path: "pokemon/add",component: PokemonAddComponent},
   { path: "pokemon/:id",component: PokemonDetailComponent},
   { path: "pokemons", component: PokemonsListComponent}
 ];
@@ -33,6 +36,8 @@ const pokemonRoutes: Routes = [
     PokemonDetailComponent,
     PokemonFormComponent,
     PokemonEditComponent,
+    PokemonAddComponent,
+    PokemonSearchComponent,
   ],
   imports: [
     // Importer de base => (ngIf/ngFor)

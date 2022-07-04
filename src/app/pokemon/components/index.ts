@@ -3,3 +3,5 @@ export * from "./pokemons-list/pokemons-list.component";
 export * from "./page-not-found/page-not-found.component";
 export * from "./pokemon-form/pokemon-form.component";
 export * from './pokemon-edit/pokemon-edit.component';
+export * from './pokemon-add/pokemon-add.component';
+export * from './pokemon-search/pokemon-search.component';
