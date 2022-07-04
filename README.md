@@ -1,27 +1,12 @@
-# TestApp
+# Pokédex with Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.3.
+## HomePage
+![Capture d’écran 2022-07-04 à 11 36 37](https://user-images.githubusercontent.com/89834824/177127895-9ab6d94c-7083-468b-b04c-23222fc7508b.png)
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Detail
+![Capture d’écran 2022-07-04 à 11 36 49](https://user-images.githubusercontent.com/89834824/177127940-c397156d-b3e3-43fc-831b-5bd21057b646.png)
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Edit a Pokemon
+![Capture d’écran 2022-07-04 à 11 37 01](https://user-images.githubusercontent.com/89834824/177127833-1b233c64-0e93-4303-b9e2-27f729527b31.png)

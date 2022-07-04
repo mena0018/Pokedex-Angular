@@ -1,0 +1,11 @@
+// name, hp, cp => dès qu'ils sont valide, on affiche une bordure verte
+.ng-valid[required] {
+    border-left: 5px solid #42A948;
+    padding-left: 5px;
+}
+
+// Champs invalides qui ne sont pas de types form => (input, select...)
+.ng-invalid:not(form) {
+    border-left: 5px solid #A94442;
+    padding-left: 5px;
+}
