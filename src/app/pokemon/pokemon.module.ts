@@ -5,7 +5,10 @@ import { FormsModule } from '@angular/forms';
 
 import { BorderCardDirective } from './directives/border-card.directive';
 import { PokemonTypeColorPipe } from './pipe/pokemon-type-color.pipe';
-import { PokemonService } from './services/pokemon.service';
+
+import { PokemonService,
+        InMemoryDataService 
+} from './services';
 
 import { PokemonsListComponent, 
          PokemonDetailComponent,
@@ -37,6 +40,6 @@ const pokemonRoutes: Routes = [
     FormsModule,
     RouterModule.forChild(pokemonRoutes)
   ],
-  providers: [PokemonService],
+  providers: [PokemonService, InMemoryDataService],
 })
 export class PokemonModule {}

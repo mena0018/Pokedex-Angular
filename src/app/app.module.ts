@@ -2,10 +2,16 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent} from './pokemon/components';
 import { PokemonModule } from './pokemon/pokemon.module';
+
+
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './pokemon/services/in-memory-data.service';
 
 
 @NgModule({
@@ -19,6 +25,8 @@ import { PokemonModule } from './pokemon/pokemon.module';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     PokemonModule,
     // AppRouting doit charger après le module Pokémon pour éviter d'avoir le routing qui renvoie uniquement des 404
     AppRoutingModule
