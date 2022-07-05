@@ -1,18 +1,10 @@
 <div class="container">
-  <input type="number" #input
-    (keyup.enter)="selectPokemon(input.value)"
-    placeholder="Saisissez l'id d'un Pokémon puis cliquer sur Entrée"
-  />
 
-  <p *ngIf="pokemonSelected">
-    Vous avez sélectionné le Pokémon : {{ pokemonSelected?.name }}
-  </p>
-  <p *ngIf="!pokemonSelected">Aucun Pokémon n'a été trouvé</p>
-
+  <app-pokemon-search></app-pokemon-search>
+  
   <div class="list-pokemons">
     <div class="pokemon-card" *ngFor="let pokemon of listPokemons"
-         pkmnBorderCard 
-         (click)="goToPokemon(pokemon.id)">
+         pkmnBorderCard (click)="goToPokemon(pokemon.id)">
 
       <div class="img">
         <img [src]="pokemon.picture" alt="logo du Pokémon" />
