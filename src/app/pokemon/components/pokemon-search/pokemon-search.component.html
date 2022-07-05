@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col s12 m6 offset-m3">
+        <div class="card">
+            <div class="card-content">
+
+                <div class="input-filed">
+                    <input placeholder="Rechercher un Pokémon"
+                           #searchBox (keyup)="search(searchBox.value)">
+
+                    <div class="collection">
+                        <a *ngFor="let pokemon of pokemonsList | async"
+                           (click)="goToDetailPokemon(pokemon.id)"
+                           class="collection-item">
+                            {{ pokemon.name }}
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
