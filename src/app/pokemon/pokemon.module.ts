@@ -17,6 +17,7 @@ import { PokemonsListComponent,
          PokemonAddComponent,
          PokemonSearchComponent
 } from './components';
+import { PokemonLoaderComponent } from './components/pokemon-loader/pokemon-loader.component';
 
 
 
@@ -38,6 +39,7 @@ const pokemonRoutes: Routes = [
     PokemonEditComponent,
     PokemonAddComponent,
     PokemonSearchComponent,
+    PokemonLoaderComponent,
   ],
   imports: [
     // Importer de base => (ngIf/ngFor)
